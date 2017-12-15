@@ -1,0 +1,25 @@
+AppBundle\Entity\Person:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PersonRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        surname:
+            type: string
+            length: 255
+        patronymic:
+            type: string
+            length: 255
+    oneToMany:
+        phones:
+            targetEntity: Phone
+            mappedBy: person
+    lifecycleCallbacks: {  }

@@ -1,0 +1,22 @@
+AppBundle\Entity\Phone:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PhoneRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        number:
+            type: string
+            length: '19'
+    manyToOne:
+        person:
+            targetEntity: Person
+            inversedBy: phones
+            joinColumn:
+                name: person_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
